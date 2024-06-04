@@ -8,5 +8,11 @@
     <Compile Update="StepDefinitions\TransformToDataTableSteps1.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WebSteps\GoogleSteps1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WebSteps\WebHook.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
