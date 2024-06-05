@@ -44,17 +44,17 @@ namespace SpecTablenRegex.WebSteps
         [AfterTestRun]
         public static void runTearDown()
         {
-            using Process p = new();
-            ProcessStartInfo startInfo = new()
-            {
-                WindowStyle = ProcessWindowStyle.Hidden,
-                FileName = "cmd.exe",
-                Arguments = @"/C dir"
-            };
-            p.StartInfo = startInfo;
-            p.Start();
-            string cmdOutput = p.StandardOutput.ReadToEnd();
-            Console.WriteLine(cmdOutput);
+            //using Process p = new();
+            //ProcessStartInfo startInfo = new()
+            //{
+            //    WindowStyle = ProcessWindowStyle.Hidden,
+            //    FileName = "cmd.exe",
+            //    Arguments = @"/C dir"
+            //};
+            //p.StartInfo = startInfo;
+            //p.Start();
+            //string cmdOutput = p.StandardOutput.ReadToEnd();
+            //Console.WriteLine(cmdOutput);
 
             //p.StartInfo.FileName = @"C:/Windows/system32/cmd.exe";
             //p.StartInfo.Arguments = "/C dir";

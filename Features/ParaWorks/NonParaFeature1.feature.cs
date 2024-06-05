@@ -21,6 +21,7 @@ namespace SpecTablenRegex.Features.ParaWorks
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("NonParaFeature1")]
+    [NUnit.Framework.NonParallelizableAttribute()]
     [NUnit.Framework.CategoryAttribute("notParallel")]
     public partial class NonParaFeature1Feature
     {
