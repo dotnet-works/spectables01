@@ -28,3 +28,11 @@ Scenario: Test3 step table type with verical header
             | user1    |             |
             |          | Test@213123 |
   Then process table data
+
+
+@steptable
+Scenario: Test4 table without header
+   Given some table without header
+               | user_1 |
+               | user_2 |
+               | user_3 |

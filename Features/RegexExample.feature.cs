@@ -20,22 +20,22 @@ namespace SpecTablenRegex.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TransformToDaTatable1")]
-    public partial class TransformToDaTatable1Feature
+    [NUnit.Framework.DescriptionAttribute("RegexExample")]
+    public partial class RegexExampleFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "TransformToDaTatable1.feature"
+#line 1 "RegexExample.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "TransformToDaTatable1", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "RegexExample", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,16 +74,14 @@ namespace SpecTablenRegex.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Test1 step table type with verical header")]
-        [NUnit.Framework.CategoryAttribute("steptableexample")]
-        [NUnit.Framework.CategoryAttribute("transformtodatatable")]
-        public void Test1StepTableTypeWithVericalHeader()
+        [NUnit.Framework.DescriptionAttribute("Handle CaseInsensitive Steps")]
+        [NUnit.Framework.CategoryAttribute("tag1")]
+        public void HandleCaseInsensitiveSteps()
         {
             string[] tagsOfScenario = new string[] {
-                    "steptableexample",
-                    "transformtodatatable"};
+                    "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test1 step table type with verical header", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Handle CaseInsensitive Steps", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -95,29 +93,37 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
-  testRunner.Given("some user table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("some step1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Username",
-                            "Password",
-                            "Email"});
-                table6.AddRow(new string[] {
-                            "testuser_1",
-                            "xyz@pass",
-                            "xyz@email1.com"});
-                table6.AddRow(new string[] {
-                            "testuser_2",
-                            "123@pass",
-                            "123@email.com"});
-                table6.AddRow(new string[] {
-                            "testuser_3",
-                            "abc@pass",
-                            "sdd@email.com"});
 #line 8
-  testRunner.When("process table data to datatable", ((string)(null)), table6, "When ");
+ testRunner.When("PROCESS STEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 9
+ testRunner.Then("Process THEN step", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("step arg trans1")]
+        public void StepArgTrans1()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("step arg trans1", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 13
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 14
-  testRunner.Then("process table data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Given("I have entered 1 day, 1 hour, 1 minute, 30 seconds into the timestamp to minute", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             }
             this.ScenarioCleanup();

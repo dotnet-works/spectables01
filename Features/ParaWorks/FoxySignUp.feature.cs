@@ -100,23 +100,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
   testRunner.When("Enter signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "Errors"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "FirstName",
                             "Please enter your first name."});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "LastName",
                             "Please enter your last name."});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Email",
                             "Please enter your email address."});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Password",
                             "Please enter your password."});
 #line 10
-  testRunner.Then("all missing feilds error should display", ((string)(null)), table4, "Then ");
+  testRunner.Then("all missing feilds error should display", ((string)(null)), table5, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

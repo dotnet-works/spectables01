@@ -2,7 +2,13 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="StepDefinitions\CustomTransforms.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StepDefinitions\FoxySignUpErrorSteps.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StepDefinitions\RegexSteps.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="StepDefinitions\StepTable1.cs">
