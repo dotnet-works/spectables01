@@ -8,12 +8,14 @@ Scenario: Verify Missing Feilds Error
   Given go to foxy signup page with url "https://admin.foxycart.com/signup/"
   When Enter signup button
   Then all missing feilds error should display
-           | Errors                           |
-           | Please enter your first name.    |
-           | Please enter your last name.     |
-           | Please enter your email address. |
-           | Please enter your password.      |
-
+           | FieldName | Errors                           |
+           | FirstName | Please enter your first name.    |
+           | LastName  | Please enter your last name.     |
+           | Email     | Please enter your email address. |
+           | Password  | Please enter your password.      |
+# Please enter your store name.
+# Please enter a valid store domain.
+# You must agree with our terms and conditions.
 
 @foxy
 Scenario: Validate Error Message

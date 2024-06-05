@@ -1,4 +1,5 @@
 ﻿using AventStack.ExtentReports.Gherkin.Model;
+using FluentAssertions.Execution;
 using OpenQA.Selenium;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
@@ -23,6 +24,18 @@ namespace SpecTablenRegex.StepDefinitions
 
         [Given(@"go to foxy signup page with url ""([^""]*)""")]
         public void Step01(string s01){
+
+            string x = Environment.GetEnvironmentVariable("browser");
+            x.Should().BeNullOrEmpty();
+            
+            if(x is null)
+            {
+                Console.WriteLine("Its null");
+            }
+            if (x=="")
+            {
+                Console.WriteLine("x is empty");
+            }
             this.driver.Url = s01;
         }
 
@@ -51,9 +64,34 @@ namespace SpecTablenRegex.StepDefinitions
                 Console.WriteLine($"row value:{row["Errors"]}");  //addressRow.Add(row["Field"], row["Value"]);
             }
 
+            IDictionary<string,string> tblDict = new Dictionary<string,string>();
+
+            foreach (TableRow row in tbl.Rows)
+            {
+                tblDict.Add(row["FieldName"], row["Errors"]);
+            }
+
+            foreach(KeyValuePair<string, string> entry in tblDict)       //foreach(var (k,v) in tblDict)
+            {
+                Console.WriteLine($"{entry.Key} ==  {entry.Value}");
+            }
+
+            using (new AssertionScope())
+            {
+                this.driver.FindElement(_ByFirstNameError).Text.Should().Be(tblDict["FirstName"]);
+                this.driver.FindElement(_ByLastNameError).Text.Should().Be(tblDict["LastName"]);
+                this.driver.FindElement(_ByEmailError).Text.Should().Be(tblDict["Email"]);
+                this.driver.FindElement(_ByPasswordError).Text.Should().Be(tblDict["Password"]);
+                //"Actual".Should().Be("Expected");
+            }
 
 
-            
+
+
+
+
+
+
 
             //foreach( var err in errorTable )
             //{

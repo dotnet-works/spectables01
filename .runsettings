@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<RunConfiguration>
+		<EnvironmentVariables>
+			<BROWSERTYPE>Chrome</BROWSERTYPE>
+			<ENV1>ENV_VAL</ENV1>
+			<ENV2></ENV2>
+		</EnvironmentVariables>
+	</RunConfiguration>
+
+	<TestRunParameters>
+		<Parameter name="param1" value="someExampleValue" />
+	</TestRunParameters>
+	<TestCaseFilter>(Category=@foxy)</TestCaseFilter>
+</RunSettings>

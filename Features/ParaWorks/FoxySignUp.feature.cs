@@ -101,14 +101,19 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.When("Enter signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FieldName",
                             "Errors"});
                 table4.AddRow(new string[] {
+                            "FirstName",
                             "Please enter your first name."});
                 table4.AddRow(new string[] {
+                            "LastName",
                             "Please enter your last name."});
                 table4.AddRow(new string[] {
+                            "Email",
                             "Please enter your email address."});
                 table4.AddRow(new string[] {
+                            "Password",
                             "Please enter your password."});
 #line 10
   testRunner.Then("all missing feilds error should display", ((string)(null)), table4, "Then ");
@@ -145,7 +150,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("StoreName", storeName);
             argumentsOfScenario.Add("StoreSubDomain", storeSubDomain);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Error Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 19
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -155,16 +160,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 20
+#line 22
  testRunner.Given("go to foxy signup page with url \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 21
+#line 23
  testRunner.When("enter all feilds except firstname", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 24
  testRunner.Then("Enter signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 23
+#line 25
  testRunner.And("error should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
