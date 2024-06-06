@@ -1,0 +1,17 @@
+{
+    "users1": [
+
+        {
+            "Login": "ivanov",
+            "FirstName": "Ivan",
+            "LastName": "Ivanov"
+        }
+    ],
+    "users2": [
+             {
+                "Login": "petrov",
+                "FirstName": "Petr",
+                "LastName": "Petrov"
+            }
+         ]
+}
