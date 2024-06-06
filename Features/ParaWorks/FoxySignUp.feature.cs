@@ -98,7 +98,7 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Given("go to foxy signup page with url \"https://admin.foxycart.com/signup/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-  testRunner.When("Enter signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("click signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
@@ -191,7 +191,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("StoreName", storeName);
             argumentsOfScenario.Add("StoreSubDomain", storeSubDomain);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Error Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 36
+#line 33
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -201,17 +201,85 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 37
+#line 34
  testRunner.Given("go to foxy signup page with url \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 38
+#line 35
  testRunner.When("enter all feilds except firstname", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 39
- testRunner.Then("Enter signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
+ testRunner.Then("click signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 40
+#line 37
  testRunner.And("error should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Signup new user")]
+        [NUnit.Framework.CategoryAttribute("foxy")]
+        public void SignupNewUser()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "foxy"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Signup new user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 47
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 48
+  testRunner.Given("go to foxy signup page with url \"https://admin.foxycart.com/signup/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FieldName"});
+#line 49
+  testRunner.When("fill all data feilds", ((string)(null)), table7, "When ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("convert header to rows")]
+        [NUnit.Framework.CategoryAttribute("foxy")]
+        public void ConvertHeaderToRows()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "foxy"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("convert header to rows", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 56
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FieldName1",
+                            "FieldName2",
+                            "FieldName3"});
+#line 57
+  testRunner.When("only headers are given", ((string)(null)), table8, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field1",
+                            "Field2",
+                            "Field3"});
+#line 59
+  testRunner.When("only headers are given", ((string)(null)), table9, "When ");
 #line hidden
             }
             this.ScenarioCleanup();

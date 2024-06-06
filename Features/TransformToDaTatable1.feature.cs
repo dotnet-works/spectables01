@@ -97,24 +97,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
   testRunner.Given("some user table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password",
                             "Email"});
-                table7.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "testuser_1",
                             "xyz@pass",
                             "xyz@email1.com"});
-                table7.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "testuser_2",
                             "123@pass",
                             "123@email.com"});
-                table7.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "testuser_3",
                             "abc@pass",
                             "sdd@email.com"});
 #line 8
-  testRunner.When("process table data to datatable", ((string)(null)), table7, "When ");
+  testRunner.When("process table data to datatable", ((string)(null)), table10, "When ");
 #line hidden
 #line 14
   testRunner.Then("process table data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

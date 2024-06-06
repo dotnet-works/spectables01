@@ -2,14 +2,29 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SpecTablenRegex.StepDefinitions
 {
     
-    public class TableExtensions
+    public static class TableExtensions
     {
+
+        public static List<string> HeaderToList(this Table table)
+        {
+            List<string> hed = new List<string>();
+            foreach (var header in table.Header)
+            {
+                hed.Add(header.ToString());//, typeof(string));
+            }
+            Console.WriteLine(hed[0]);
+            return hed;
+        }
+
+
+
         public static Dictionary<string, string> ToDictionary(Table table)
         {
             var dictionary = new Dictionary<string, string>();
@@ -23,6 +38,9 @@ namespace SpecTablenRegex.StepDefinitions
         public static DataTable ToDataTable(Table table)
         {
             var dataTable = new DataTable();
+            
+
+
             foreach (var header in table.Header)
             {
                 dataTable.Columns.Add(header, typeof(string));
