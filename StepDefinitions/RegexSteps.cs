@@ -1,6 +1,8 @@
 ﻿using AventStack.ExtentReports.Gherkin.Model;
 using System.Diagnostics;
 using TechTalk.SpecFlow;
+using System.Collections;
+using System.Security;
 
 namespace SpecTablenRegex.StepDefinitions
 {
@@ -29,15 +31,26 @@ namespace SpecTablenRegex.StepDefinitions
             Console.WriteLine("Case-InSensitive Step3");
         }
 
-        [Given(@"I have entered ((.*) day, (.*) hour, (.*) minute, (.*) seconds) into the timestamp to minute")]
-        //[Given(@"I have entered ""(.*)"" into the timestamp to minute")]
-        public void GivenIHaveEnteredDayHourMinuteSecondsIntoTheTimestampToMinute(String days, String hours, String minutes, String seconds)
+        //[Given(@"I have entered ((.*) day, (.*) hour, (.*) minute, (.*) seconds) into the timestamp to minute")]
+        [Given(@"I have entered ""(.*)"" into the timestamp to minute")]
+        public void TimeSpanMethod(TimeSpan t) //String days, String hours, String minutes, String seconds)
         { //TimeSpan day,string hour,string minute, string seconds  )
             
-                Console.WriteLine(x.ToString());
+                Console.WriteLine(t.ToString());
                 //new CustomTransforms().
                 //object value = convertToTimeSpan(day,hour,minute,seconds);
             
         }
+
+
+        [Given(@"enter (.*)")]
+        public void GivenEnterFormData(IList FormFeilds)
+        {
+            Console.WriteLine(FormFeilds[0]);
+        }
+
+
+
+
     }
 }

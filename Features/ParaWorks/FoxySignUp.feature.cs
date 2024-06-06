@@ -123,6 +123,47 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("verify new user email")]
+        [NUnit.Framework.CategoryAttribute("foxy")]
+        public void VerifyNewUserEmail()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "foxy"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("verify new user email", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 22
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 23
+ testRunner.Given("go to foxy signup page with url \"https://admin.foxycart.com/signup/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "email",
+                            "message"});
+                table6.AddRow(new string[] {
+                            "newemail",
+                            ""});
+                table6.AddRow(new string[] {
+                            "wrong_email",
+                            "Please enter your email address."});
+                table6.AddRow(new string[] {
+                            "used_email",
+                            "This email address is already in use. Would you like to login instead?."});
+#line 24
+ testRunner.When("validate user email message", ((string)(null)), table6, "When ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate Error Message")]
         [NUnit.Framework.CategoryAttribute("foxy")]
         [NUnit.Framework.TestCaseAttribute("null", "rand", "rand", "rand", "rand", "rand", "action", "action", "action", "action", "rand", "rand", null)]
@@ -150,7 +191,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("StoreName", storeName);
             argumentsOfScenario.Add("StoreSubDomain", storeSubDomain);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Error Message", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+#line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -160,16 +201,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 22
+#line 37
  testRunner.Given("go to foxy signup page with url \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 38
  testRunner.When("enter all feilds except firstname", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 39
  testRunner.Then("Enter signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 25
+#line 40
  testRunner.And("error should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

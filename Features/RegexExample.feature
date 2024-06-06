@@ -11,5 +11,6 @@ Scenario: Handle CaseInsensitive Steps
 
 #Scenario: Convert timestamp to minutes - variant 3
 Scenario: step arg trans1
-    #Given I have entered 1 day, 1 hour, 1 minute, 30 seconds into the timestamp to minute
-	Given I have entered www@gmail.com with domain
+    //Given I have entered 1 day, 1 hour, 1 minute, 30 seconds into the timestamp to minute
+	#Given enter "firstname,lastname,email," form data
+	Given enter "firstname,lastname,email" form data

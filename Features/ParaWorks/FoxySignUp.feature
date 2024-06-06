@@ -17,6 +17,21 @@ Scenario: Verify Missing Feilds Error
 # Please enter a valid store domain.
 # You must agree with our terms and conditions.
 
+
+@foxy
+Scenario: verify new user email
+ Given go to foxy signup page with url "https://admin.foxycart.com/signup/"
+ When validate user email message
+             | email       | message                                                                 |
+             | newemail    |                                                                         |
+             | wrong_email | Please enter your email address.                                        |
+             | used_email  | This email address is already in use. Would you like to login instead?. | 
+             
+# "//form[@id='signup']/fieldset/div[2]"
+
+
+
+
 @foxy
 Scenario: Validate Error Message
 	Given go to foxy signup page with url ""
