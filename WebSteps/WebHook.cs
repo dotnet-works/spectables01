@@ -2,6 +2,7 @@
 using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using RazorEngine.Compilation.ImpromptuInterface.Dynamic;
 using SpecTablenRegex.TestUtils;
 using System.Diagnostics;
@@ -68,7 +69,7 @@ namespace SpecTablenRegex.WebSteps
             chrome_options.AddArgument("--test-type");
 
 
-            this._driver = new ChromeDriver(chrome_options);
+            this._driver = new FirefoxDriver();        //new ChromeDriver(chrome_options);
             
             this._driver.Manage().Window.Maximize();
             this._driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);

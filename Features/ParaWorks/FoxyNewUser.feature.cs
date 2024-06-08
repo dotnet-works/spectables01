@@ -165,7 +165,7 @@ this.ScenarioInitialize(scenarioInfo);
    testRunner.Given("Hey all  i know", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 33
-   testRunner.Given("remove extra spaces in step def", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+   testRunner.Given("handle multiline string data", "this is\r\n   simple string", ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             }
             this.ScenarioCleanup();

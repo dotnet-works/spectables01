@@ -268,7 +268,7 @@ namespace SpecTablenRegex.WebSteps
                 }
                                 
                 string check_StoreDomainAvailiablity = this.driver.FindElement(By.XPath("//fieldset[3]//div[3]")).Text;
-                Thread.Sleep(5000);
+                Thread.Sleep(1000);
 
                 driver.ExecuteJavaScript("arguments[0].scrollIntoView();", driver.FindElement(By.CssSelector(".row>.label_checkbox")));
                    
@@ -296,10 +296,10 @@ namespace SpecTablenRegex.WebSteps
 
        // [Given(@"(?s+)^remove extra spaces in step  def$")]
         //[Given(@"(\\s+(?:\\s+\\s+)+)^remove extra spaces in step def$")]
-        [Given(@"(\s+)^remove extra spaces in step def$")]
-        public void checkspaces2()
+        [Given("^handle multiline string data$")]
+        public void checkmultiline(string multilinetext)
         {
-            Console.WriteLine("Execute step ");
+            Console.WriteLine(@$"{multilinetext}");
         }
 
 

@@ -30,5 +30,16 @@ Scenario: create new user
 
 Scenario: Replace extra spaces
    Given Hey all  i know
-   Given remove extra spaces in step def
+   Given handle multiline string data 
+          """
+		     this is
+             simple string
+		  """ 
 
+   Given handle multiline string data 
+          """
+		    {
+		     name:"Rajeev Singh",
+             Id: "1231233"
+		    }
+		  """ 
