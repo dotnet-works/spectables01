@@ -15,11 +15,17 @@ namespace SpecTablenRegex.StepDefinitions
         public static List<string> HeaderToList(this Table table)
         {
             List<string> hed = new List<string>();
-            foreach (var header in table.Header)
+            try
             {
-                hed.Add(header.ToString());//, typeof(string));
+                foreach (var header in table.Header)
+                {
+                    hed.Add(header.ToString());//, typeof(string));
+                }
+                Console.WriteLine(hed[0]);
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
-            Console.WriteLine(hed[0]);
             return hed;
         }
 

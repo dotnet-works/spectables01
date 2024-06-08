@@ -100,23 +100,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
   testRunner.When("click signup button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "Errors"});
-                table5.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "FirstName",
                             "Please enter your first name."});
-                table5.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "LastName",
                             "Please enter your last name."});
-                table5.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Email",
                             "Please enter your email address."});
-                table5.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Password",
                             "Please enter your password."});
 #line 10
-  testRunner.Then("all missing feilds error should display", ((string)(null)), table5, "Then ");
+  testRunner.Then("all missing feilds error should display", ((string)(null)), table8, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -144,20 +144,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 23
  testRunner.Given("go to foxy signup page with url \"https://admin.foxycart.com/signup/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "email",
                             "message"});
-                table6.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "newemail",
                             ""});
-                table6.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "wrong_email",
                             "Please enter your email address."});
-                table6.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "used_email",
                             "This email address is already in use. Would you like to login instead?."});
 #line 24
- testRunner.When("validate user email message", ((string)(null)), table6, "When ");
+ testRunner.When("validate user email message", ((string)(null)), table9, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -239,10 +239,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 48
   testRunner.Given("go to foxy signup page with url \"https://admin.foxycart.com/signup/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName"});
 #line 49
-  testRunner.When("fill all data feilds", ((string)(null)), table7, "When ");
+  testRunner.When("fill all data feilds", ((string)(null)), table10, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -267,19 +267,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName1",
                             "FieldName2",
                             "FieldName3"});
 #line 57
-  testRunner.When("only headers are given", ((string)(null)), table8, "When ");
+  testRunner.When("only headers are given", ((string)(null)), table11, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field1",
                             "Field2",
                             "Field3"});
 #line 59
-  testRunner.When("only headers are given", ((string)(null)), table9, "When ");
+  testRunner.When("only headers are given", ((string)(null)), table12, "When ");
 #line hidden
             }
             this.ScenarioCleanup();

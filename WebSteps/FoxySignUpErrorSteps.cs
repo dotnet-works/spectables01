@@ -115,10 +115,6 @@ namespace SpecTablenRegex.WebSteps
         public void FillFieldData(Table table)
         {
 
-            
-
-
-
             this.driver.FindElement(By.Id("first_name")).SendKeys(Faker.Name.First());
             this.driver.FindElement(By.Id("last_name")).SendKeys(Faker.Name.Last());
             this.driver.FindElement(By.Id("email")).SendKeys("xyz123@yopmail.com");
@@ -171,6 +167,153 @@ namespace SpecTablenRegex.WebSteps
             tb1.HeaderToList();
             
         }
+
+        [When("enter (.*) info fieldset with following data:")]
+        public void fieldset_data(string fieldSetName, Table Fieldtable)
+        {
+
+            List<string> fields = new List<string>();
+            foreach(var rowx in Fieldtable.Rows)
+            {
+
+                Console.WriteLine(rowx["FieldSet"]);
+                fields.Add(rowx["FieldSet"].ToLower());
+            }
+
+            string formset = fieldSetName.ToLower();
+
+            if (fieldSetName.ToLower().Contains("about yourself"))
+            {
+                if (fields.Contains("firstname")){
+                    this.driver.FindElement(By.Id("first_name")).SendKeys(Faker.Name.First()); 
+                }
+                if (fields.Contains("lastname"))
+                {
+                    this.driver.FindElement(By.Id("last_name")).SendKeys(Faker.Name.Last());  
+                }
+                if (fields.Contains("email"))
+                {
+                    var newMail = "maxy"+Faker.RandomNumber.Next(1000, 2000)+"@yopmail.com";
+                    this.driver.FindElement(By.Id("email")).SendKeys(newMail);
+                   // this.driver.FindElement(By.Id("email")).SendKeys("zulutest01@yopmail.com"); //
+                    this.driver.FindElement(By.XPath("//html/body//fieldset")).Click();
+                    Thread.Sleep(3000);
+                    string mailMessage = this.driver.FindElement(By.XPath("//form[@id='signup']/fieldset/div[2]")).Text;
+                    Console.WriteLine(mailMessage);
+                    if(!mailMessage.Contains("Email Check: Available"))
+                    {
+                        throw new Exception($"Exception: {mailMessage} :Mail not availiable");
+                    }
+                    
+                }
+                if (fields.Contains("password"))
+                {
+                    this.driver.FindElement(By.Id("pwd")).Click();
+                    driver.FindElement(By.Id("pwd")).SendKeys("1234@Test@1234");
+                }
+
+                if (fields.Contains("foxydesire"))
+                {
+                    this.driver.FindElement(By.Id("foxy_desire")).Click();
+                    this.driver.FindElement(By.Id("foxy_desire")).SendKeys(Faker.Lorem.Sentence());
+                }
+
+
+            }
+
+
+            if (fieldSetName.ToLower().Contains("consider yourself"))
+            {
+                if(fields.Contains("is_programmer")) {
+                    this.driver.FindElement(By.Id("is_programmer")).Click();
+                }
+
+                if (fields.Contains("is_developer"))
+                {
+                    this.driver.FindElement(By.Id("is_developer")).Click();
+                }
+
+                if (fields.Contains("is_designer"))
+                {
+                    this.driver.FindElement(By.Id("is_designer")).Click();
+                }
+
+                if (fields.Contains("is_merchant"))
+                {
+                    this.driver.FindElement(By.Id("is_merchant")).Click();
+                }
+
+            }
+
+            if (fieldSetName.ToLower().Contains("store domain"))
+            {
+                string storeName = Faker.Name.First() + "123";
+
+                if (fields.Contains("storename"))
+                {
+                    this.driver.FindElement(By.Id("store_name")).SendKeys(storeName);                     
+                }
+
+                if (fields.Contains("storedomain"))
+                {
+                    this.driver.FindElement(By.Id("store_domain")).SendKeys(storeName + "Daily"); //zimstore
+
+                    this.driver.FindElement(By.XPath("//html/body//fieldset")).Click();
+                    Thread.Sleep(1500);
+                    string domainAvailibilty = this.driver.FindElement(By.CssSelector("div#store_domain_found.more_info")).Text;
+                    if (!domainAvailibilty.Contains("Domain Check: Available"))
+                    {
+                        throw new Exception($"Exception: {domainAvailibilty} domain not availiable");
+                    }
+                }
+                                
+                string check_StoreDomainAvailiablity = this.driver.FindElement(By.XPath("//fieldset[3]//div[3]")).Text;
+                Thread.Sleep(5000);
+
+                driver.ExecuteJavaScript("arguments[0].scrollIntoView();", driver.FindElement(By.CssSelector(".row>.label_checkbox")));
+                   
+            }
+        }
+
+        [When("click agree and captch checkbox")]
+        public void AgreeAndClick()
+        {
+            driver.FindElement(By.Id("terms_agree")).Click();
+            Thread.Sleep(500);
+            driver.SwitchTo().Frame(0);
+            Thread.Sleep(500);
+            driver.FindElement(By.CssSelector(".recaptcha-checkbox-border")).Click();
+            Thread.Sleep(3000);
+            driver.SwitchTo().DefaultContent();
+        }
+
+
+        [Given(@"(?i)^hey all  i know$")]
+        public void checkspaces()
+        {
+            Console.WriteLine("Execute step ");
+        }
+
+       // [Given(@"(?s+)^remove extra spaces in step  def$")]
+        //[Given(@"(\\s+(?:\\s+\\s+)+)^remove extra spaces in step def$")]
+        [Given(@"(\s+)^remove extra spaces in step def$")]
+        public void checkspaces2()
+        {
+            Console.WriteLine("Execute step ");
+        }
+
+
+        /*
+         
+         
+         */
+
+
+
+
+
+
+
 
 
 
